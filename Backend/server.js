@@ -5,6 +5,7 @@ import roleApiObj from './Routes/role.js';
 import authApiObj from './Routes/auth.js';
 import userApiObj from './Routes/user.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 const app = express();
 dotenv.config();
@@ -13,6 +14,10 @@ dotenv.config();
 //middlewares
 app.use(express.json()); //to accept all the request bodies
 app.use(cookieParser());
+app.use(cors({
+    origin : 'http://localhost:4200',
+    credentials : true
+}))
 app.use('/api/role', roleApiObj);
 app.use('/api/auth',authApiObj);
 app.use('/api/users',userApiObj)
