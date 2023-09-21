@@ -1,4 +1,4 @@
-<div class="lg:w-4/12 mt-3 p-10 shadow-lg mx-auto">
+<div class="lg:w-4/12 mt-5 p-10 shadow-lg mx-auto">
     <!-- mx-auto will make it center -->
     <h3 class="text-3xl text-center font-semibold py-5">Register</h3>
     <form [formGroup]="registerForm" class="flext flex-col">
@@ -36,10 +36,9 @@
             <input type="password" formControlName="confirmPassword" class="p-2 border border-gray-300 rounded" placeholder="Confirm Password">
             <span *ngIf="registerForm.hasError('required','confirmPassword') && registerForm.controls['confirmPassword'].dirty" class="text-red-500">*Confirm Password is required</span>
             <span *ngIf="registerForm.hasError('confirmPasswordValidator','confirmPassword')" class="text-red-500">*Password didn't matched!</span>
-
           </div>
 
-        <button [disabled]="registerForm.invalid" [class.disabled]="registerForm.invalid" (click)="register()" class="bg-indigo-500  p-2 rounded w-full mt-2 text-white">Submit</button>
+        <button [disabled]="registerForm.invalid" [class.disabled]="registerForm.invalid" (click)="register()" class="bg-indigo-500  p-2 rounded w-full mt-2 text-white">Register</button>
         <!-- [class.disabled]="registerForm.invalid"
           if registerform is invalid we are applying class disabled
           disabled styling properties there in styles.scss
@@ -47,6 +46,6 @@
     </form>
 
     <div class="flex justify-center mt-5 mb-5">
-        <span>Already have account?</span><a class="text-indigo-600 ml-2 cursor-pointer">Login</a>
+        <span>Already have account?</span><a routerLink="/login" class="text-indigo-600 ml-2 cursor-pointer">Login</a>
     </div>
 </div>

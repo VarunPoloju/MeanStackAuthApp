@@ -7,6 +7,7 @@ export const routes: Routes = [
     {path:'home', loadComponent : ()=> import('./pages/home/home.component')},
     {path:'footer', loadComponent : ()=> import('./components/footer/footer.component')},
     {path:'header', loadComponent : ()=> import('./components/header/header.component')},
+    {path:'reset/:token' , loadComponent : ()=> import('./pages/reset/reset.component')}
 
 
 
